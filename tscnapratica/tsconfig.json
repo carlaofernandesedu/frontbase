@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "rootOut": "commonjs",
+        "dirOut": "commonjs"
+    },
+    "files" : [],
+    "exclude": [
+        "node_modules"
+    ]
+}

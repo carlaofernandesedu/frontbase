@@ -1,0 +1,404 @@
+NODE.JS é um runtime javascript built on CHROME V8 MOTOR DE JAVASCRIPT.
+NODE.JS modelo orientado a eventos, I/O sem bloqueio leve e eficiente 
+ECOSISTEMA DE PACOTES NPM - 
+
+https://docs.microsoft.com/pt-br/visualstudio/javascript/?view=vs-2019
+
+CODIGO FONTE 
+https://github.com/schoolofnetcom/typescript2
+
+
+Metodo de Compilacao tsc 
+Arquivos .ts 
+Metodo para execução node 
+ para executar 
+
+*******************************************
+01 - ALUA 1 
+********************************************
+Montar o ambiente de desenvolvimento = NODE.JS 
+complicador de TypeScript 
+Dentro de um terminal rodar comandos 
+node -v
+npm -v 
+instalacao do typescript 
+npm install -g typescript@2.6.1
+verificar para instalar locamente 
+PARA VERIFICAR SE ESTA INSTALADO 
+tsc -v  
+
+EDITORES 
+SUBLIME TEXT 
+VISUAL STUDIO CODE 
+
+
+ 
+*********************
+02 - AULA (VAR E LET)
+*********************
+Explicando o var e let 
+var =  com escopo global  tomar cuidado 
+trabalhando com var alonga tempo de vida da variavel 
+var text= 'xxx';
+var text = 'yyy';
+nao ha problema sobreescrever 
+
+let uma forma de criar variaveis 
+com o let observa o escopo por exemplo 
+dentro do bloco if ele perde sua vida apos sair se for declarado vai morrer 
+dentro do bloco diferente de um var. 
+Sempre que puder criar aplicacoes com let 
+Tempo de vida mais curta 
+Não pode redeclarar as variaves 
+
+OBSERVAR AS REGRAS ECMASRIPT 6 ES6  
+
+*********************
+03 - AULA (VAR CONSTANTES)
+*********************
+diferenca uma vez que inicializada ela nao pode ser modificada no tempo de vida dela 
+
+const num = 2; 
+num = 4; 
+será gerado erro na compilacao observar
+
+cenario 
+const obj = 
+{
+  name: 'Luiz Carlos'
+}
+porém se acessar propriedade do objeto consegue 
+modificar os valores da propriedade 
+Quem é constante é o objeto, mas a estrutura interna se consegue modificar 
+Mais performatico procedimento
+
+
+*********************
+04 - AULA TIPOS BASICOS 
+*********************
+fortemente tipada 
+ATRIBUIDO TIPOS PARA VARIAVEIS 
+//booleano 
+let sucess = true; //forma implicita 
+let explicitasucess : boolean  = true; //explicita 
+
+//numeros 
+let numerico  = 10; 
+let numerico  = 10.50; //ponto flutuante 
+let numerico:number = 0xFA;
+
+//num = true; ERRO  
+
+//string
+let name:string  = 'Luiz Carlos';
+let name:string  = 'Luiz Carlos' + 'XTTOT';
+
+Dica de Template String 
+nome = "Escola da NEt " + name1 + "XPTO"; 
+TEMPLATE STRING 
+nome = "Escola da NEt ${name1}` XPTO"; 
+
+NOTA: aconteceu um erro 
+
+//Array 
+let array01 ["a","b","c"]; //do tipo array  
+let array02 ["a","b","c",4]; //do tipo array  
+let arrayStrings: string[] ["a","b","c"]; //array do tipo string 
+
+Notacao Mais interessante Type parameters 
+arrayStrings: Array<string> =  ["a","b","c"]; 
+
+arrayQualquerTipo: Array<any> =  ["a","b","c",4]; 
+
+
+
+
+//Enum 
+trabalhar com faixa de valores 
+enum estado_civil {Solteiro,Casado,Divorciado}
+
+let meu_estado:estado_civil = estado_civil.Solteiro;
+
+if(meu_estado_civil == estado_civil.Solteiro) 
+
+se nao determina numeros para a constantes ele coloca numero inteiro
+
+Estudar como monta um enum funcao como parenteses
+
+*********************
+05 - AULA object and any 
+*********************
+object minusculo
+
+let obj: object = 
+{
+   first = 'Luiz',
+   name = 'Silva'
+}
+
+let objNativo : Object = {
+  categoria: "categoria",
+  produto: "produto2"
+}
+
+objNativo = 2;
+Validacao do Tipo Nativo nao OCORRE 
+lib.d.ts (tipo nativo do javascript) 
+
+Outro Tipo do TypesScript 
+pelo tipo any pode receber varios conteudo de tipos diferentes 
+
+let infoNum: any = 4;
+infoNum = "string"
+Funcionara nesse caso
+let myArray = []; // qualquer tipo 
+POREM MELHOR TRABALHAR DESSA FORMA 
+let myArrayAny:Array<any> = [2, "string", false,{nome:'Luiz'}];
+OU 
+let myArrayAny2:any[] = [2, "string", false,{nome:'Luiz'}];
+
+************************
+06 - ASSERTION E TIPOS E CONVERSOES 
+***********************
+
+let meu_nome : any  = 'luiz carlos';
+meu_nome.xpto ou meu_nome.length (nao consegue verificar)
+para fazer assertion 
+
+let count = (<string>meu_nome).length; 
+
+let obj = {nome:'luica'};
+UMA VEZ QUE DEFINO OS ITENS DO OBJETO O TS JA FICA COM O MODELO..
+
+PARA FAZER UMA CONVERSAO DE INCLUSAO DINAMICA DE PROPRIEDADES 
+(<any>obj).texto = 'Nova propriedade';
+
+let count = (meu_nome as string).length; 
+
+let digito = 2; 
+converteu para string 
+let digitoEmString  = digito + "";
+
+let Stringdigito = "-234"; 
+converteu para numero  
+let digito  =  +Stringdigito;
+
+***********************************************
+07 - FUNCTIONS 
+***********************************************
+function soma(x,y)
+{
+  return x + y; 
+}
+
+funcoes anonimas 
+let soma = function(x,y){return x+y};
+dicas colocar funcao como const para otimizar memoria  
+const soma = function(x,y){return x+y};
+
+determina os tipos de entrada e retorno 
+function soma(x:number,y:number):number
+{
+  return x + y; 
+}
+
+let num : number = soma(2,5);
+
+NOVO MODO DE USAR FUNCOES == NOVO MODO ARROW FUNCTIONS 
+const soma = (x:number,y:number):number =>
+{
+  return x + y; 
+}
+
+NOVO ATALHO PARA REDUZIR ESCRITA 
+const soma = (x:number,y:number):number => x+y;
+
+OUTRO EXEMPLO 
+ let funcao1 = name => 'Luiz' ${name}`;
+ PARAMETROS DEFAULT
+ let DefaultParameters = (nome,apelido:string = 'Junior') =>
+ {}
+
+PARAMETROS OPCIONAIS 
+ let OptionalParameters = (nome:string, apelido?:string) => 
+ {
+ }
+ 
+TRATANDO O VALOR QUANDO NAO INFORMADO 
+ O valor undefined vai continuar existindo 
+ para verificar se o valor nao foi informado 
+ if (typeof apelido == "undefined")
+
+******************************************
+08 - CLASSES 
+*******************************************
+ representacao de algo mundo real ou virtual 
+ 
+ class Animal
+ {
+   name: string;
+ }
+ 
+ let animal : Animal = new Animal();
+ 
+ class Animal
+ {
+   name: string;
+   
+   constructor()
+   {
+     console.log('texto');
+   }
+ }
+ 
+ OUTRO FORMA DE ATRIBUIR  ATRIBUTOS 
+ class Animal
+ {
+   name: string;
+   
+   constructor(name:string)
+   {
+     this.name = name;
+   }
+ }
+ 
+ VERIFICAR OTIMIZAR POR RECURSO DO TYPE SCRIPT (public)
+ class Animal
+ {
+   //name: string;
+   
+   constructor(public name:string)
+   {
+     //this.name = name;
+   }
+ }
+ 
+ ***************************************
+ 09 - INTERFACE 
+ ***************************************
+ interface dentro do typscript , mais flexivel 
+ 
+ interessante uma definicao na hora para o funcao 
+ da criacao de estrutura 
+ function show(obj:{category:"cat",product:"product"} )
+ {
+ 
+ }
+ 
+ show(obj:{category:"xx",})
+  
+ outra forma relacionada a ES6 nao precisa acessar 
+  function show({categoria,produto}:{categoria:string,produto:string})
+ 
+ stubclass
+ Letra inicial maiuscula e restante minuscula 
+ 
+ outra forma ate por conta de muitas propriedades 
+ interface ObjectValue{
+   categoria:string,
+   product?: string
+ }
+ 
+ let obj: ObjectValue = {category: 'cat'};
+ 
+ interface ligada as classes 
+ classes fica obrigada a tratar os procedimentos de obrigatoriedade 
+ class Product implements ObjectValue{
+   categoria:string
+ }
+ 
+ class Product implements ObjectValue{
+   categoria:string,
+   product:string
+ }
+ 
+ *********************************
+ 10 - MAIS SOBRE CLASSES -- 
+ **********************************
+ 
+ class Animal {
+ 
+   constructor (public nome:string, public color:string)
+   {
+   }
+ }
+ 
+ let meuAnimal : Animal = new Animal('Coelho','branco');
+ console.log(meuAnimal.nome);
+ console.log(meuAnimal.color);
+ 
+ class posso definir um modelo para ser usado em outras classes 
+ conceito de heranca ... 
+ 
+ Combina conceito de Implementacao 
+ 
+ Combina conceito de heranca .. 
+ 
+ class Coelho extends Animal{
+   tamanhoOrelha: number; 
+   
+   correr(){}
+   
+   andar(){}
+ }
+ 
+ let coelho:Coelho = new Coelho('coelho','preto');
+ coelho.andar();
+ coelho.correr();
+ 
+ 
+ Conceito que pode ser usado 
+ SOBRESCREVER metodo de quem estou herdando 
+ comer() do animal 
+ comer() do coelho
+ padrao chama o metodo do filho. 
+ 
+ se dentro do filho quero chamar o metodo do pai 
+ Acessar os itens pela palavra reservada "super" 
+ comer() {
+  super.comer()
+ }
+ 
+ METODOS dentro da classe 
+ poderia estar dentro da interface poderia tambe 
+ ter que incluir dentro da interface 
+ Entao posso ter metodos dentro da interface 
+ 
+ **************************************
+ 11 - Modificadores em Classes  
+ **************************************
+ modificadores de acesso 
+ 
+ toda vez que cria atributos dentro da classe e nao informa eles sao publicos 
+ toda vez que cria metodos dentro da classe e nao informa eles sao publicos 
+ 
+ modificador private 
+  private color;
+  private correr()
+ {}
+ 
+  protected atributo1 (Acessar via classes que herdam esse item porem eles sao privados para o processo)
+ 
+  **************************************
+ 12 - GENERICOS   
+ **************************************
+ 
+Typed Parameters conceito de generics ou type parameter 
+Array<numero>
+
+function funcaousagenerico<T>(param: T): T{
+  return param;
+}
+
+let strfuncao:string = funcao(param: "texto");
+let numfuncao = funcao(param: 2);
+let numfuncao:number = funcao<number>(param: 2);
+let numfuncao:number = funcao(param: 2);
+
+class List<T>{
+  items: Array<T> = [];
+  add(item:T){}
+  remover(item:T){}
+}
+
+let lista = new Lista<number>();

@@ -1,5 +1,10 @@
 Type Script na pratica
 
+CONFIGURACOES PARA O GIT GLOBAL 
+git config --global user.name "Carlos Melo"
+git config --global user.email "carlaofernandesedu@gmail.com"
+
+
 Informacoes para trabalhar para poder rodar o TypeScript Localmente 
 npm init para criar o package.json
 modificar o arquivo package.json para fazer a referencia ao comando para ser executado 

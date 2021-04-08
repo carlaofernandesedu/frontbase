@@ -5,7 +5,7 @@
         "rootDir": "src",
         "sourceMap": true
     },
-    "files" : ["src/aulaintroducao.ts","src/posts03.ts"],
+    "files" : ["src/aulaintroducao.ts","src/posts03.ts","src/posts03eventmanager.ts"],
     "exclude": [
         "node_modules"
     ]

@@ -1,0 +1,52 @@
+Type Script na pratica
+
+Informacoes para trabalhar para poder rodar o TypeScript Localmente 
+npm init para criar o package.json
+modificar o arquivo package.json para fazer a referencia ao comando para ser executado 
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc"
+  },
+npm install typescript@2.6.1 --save-dev
+npm run tsc 
+Nao consegui fazer rodar o comando para executar build para outra pasta
+Somente funcionou para a pasta onde o arquivo ts 
+Passou a funciona somente a partir do arquivo de compilacao de TS tsconfig.json  
+
+
+************************************
+AULA 2 AMBIENTE DE DESENVOLVIMENTO 
+************************************
+pasta public acessivel para o browser 
+pasta src (para ficar o codigo fonte) 
+Duas pastas 
+public 
+src  
+compilar os arquivos ts para a pasta public 
+
+
+
+************************************
+AULA 3 CONFIGURAR COMPILACAO DO TYPESCRIPT  
+************************************
+compilar pastas inteiras 
+tsc src\posts.ts --outDir public 
+compilar a pasta inteira 
+
+o TypeScript pode ler um arquivo para efetuar a compilacao dos procedimentos via TypeScript 
+tsconfig.json 
+compilacao para ES5 porque os browsers ainda suportam a maioria ES5
+{
+  "compilerOptions :
+  {
+    "target": "es5",
+	"outDir": "public",
+	"rootDir": "src"
+	},
+	"files": 
+	[ "src/aulaintroducao.ts" ]
+  }
+}
+OUTRA DICA TEM UMA OPCAO PARA QUE O TERMINAL FIQUE O PROCESSO
+RODANDO e monitorando se houve mudancas nos arquivos para gerar a compilação 
+tsc -w

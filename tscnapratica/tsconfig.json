@@ -4,7 +4,7 @@
         "outDir": "public",
         "rootDir": "src"
     },
-    "files" : ["src/aulaintroducao.ts"],
+    "files" : ["src/aulaintroducao.ts","src/posts03.ts"],
     "exclude": [
         "node_modules"
     ]

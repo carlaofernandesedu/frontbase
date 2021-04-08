@@ -55,3 +55,7 @@ compilacao para ES5 porque os browsers ainda suportam a maioria ES5
 OUTRA DICA TEM UMA OPCAO PARA QUE O TERMINAL FIQUE O PROCESSO
 RODANDO e monitorando se houve mudancas nos arquivos para gerar a compilação 
 tsc -w
+
+******************************************************
+AULA 3 - O QUE NAO FAZER EM TYPESCRIPT 
+*****************************************************

@@ -59,3 +59,12 @@ tsc -w
 ******************************************************
 AULA 3 - O QUE NAO FAZER EM TYPESCRIPT 
 *****************************************************
+Da dicas de modelar por objeto 
+
+******************************************************
+AULA 4 - SOURCEMAP E DEBUG  
+*****************************************************
+comando que gera o arquivo sourcemap que diz ao browser como fazer o mapeamento de typescript
+com o javascript gerado 
+
+comando npm run tsc --sourceMap ou colocar dentro do arquvo tsconfig.json 

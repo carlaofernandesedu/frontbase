@@ -2,7 +2,8 @@
     "compilerOptions": {
         "target": "es5",
         "outDir": "public",
-        "rootDir": "src"
+        "rootDir": "src",
+        "sourceMap": true
     },
     "files" : ["src/aulaintroducao.ts","src/posts03.ts"],
     "exclude": [

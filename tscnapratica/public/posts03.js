@@ -1,23 +1,23 @@
 var Post03 = /** @class */ (function () {
-    function Post03() {
+    function Post03(boxLista, boxForm) {
         this.seletorButtonList = "#" + BoxList.Id + ">button[type=button]";
         this.seletorButtonForm = "#" + BoxForm.Id + ">button[type=button]";
+        this._boxLista = boxLista;
+        this._boxForm = boxForm;
         this.init();
     }
-    Post03.prototype.ListarPosts = function (boxLista, boxForm) {
-        boxLista.Esconder(false);
-        boxForm.Esconder(true);
+    Post03.prototype.ListarPosts = function () {
+        this._boxLista.Esconder(false);
+        this._boxForm.Esconder(true);
     };
-    Post03.prototype.CadastrarPost = function (boxLista, boxForm) {
-        boxLista.Esconder(true);
-        boxForm.Esconder(false);
+    Post03.prototype.CadastrarPost = function () {
+        this._boxLista.Esconder(true);
+        this._boxForm.Esconder(false);
     };
     Post03.prototype.init = function () {
         var _this = this;
-        var boxList = new BoxList();
-        var boxForm = new BoxForm();
-        document.querySelector(this.seletorButtonList).addEventListener("click", function () { _this.CadastrarPost(boxList, boxForm); });
-        document.querySelector(this.seletorButtonForm).addEventListener("click", function () { _this.ListarPosts(boxList, boxForm); });
+        document.querySelector(this.seletorButtonList).addEventListener("click", function () { _this.CadastrarPost(); });
+        document.querySelector(this.seletorButtonForm).addEventListener("click", function () { _this.ListarPosts(); });
     };
     return Post03;
 }());
@@ -52,4 +52,5 @@ var BoxForm = /** @class */ (function () {
     BoxForm.Id = 'box-post-form';
     return BoxForm;
 }());
-var paginaPost = new Post03();
+var paginaPost = new Post03(new BoxList(), new BoxForm());
+//# sourceMappingURL=posts03.js.map

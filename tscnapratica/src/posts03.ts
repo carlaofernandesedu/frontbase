@@ -2,31 +2,33 @@ class Post03
 {
     private seletorButtonList:string = `#${BoxList.Id}>button[type=button]`;
     private seletorButtonForm:string = `#${BoxForm.Id}>button[type=button]`;
+    private _boxLista:BoxList;
+    private _boxForm:BoxForm;
 
-    constructor(){
+    constructor(boxLista:BoxList,boxForm:BoxForm){
+        this._boxLista = boxLista;
+        this._boxForm = boxForm;
         this.init();
     }
 
-    ListarPosts(boxLista:BoxList,boxForm:BoxForm)
+    ListarPosts()
     {
-        boxLista.Esconder(false);
-        boxForm.Esconder(true);
+        this._boxLista.Esconder(false);
+        this._boxForm.Esconder(true);
     }
 
-    CadastrarPost(boxLista:BoxList,boxForm:BoxForm)
+    CadastrarPost()
     {
-        boxLista.Esconder(true);
-        boxForm.Esconder(false);
+        this._boxLista.Esconder(true);
+        this._boxForm.Esconder(false);
     }
 
-    init()
+    private init()
     {
-        let boxList = new BoxList();
-        let boxForm = new BoxForm();
         document.querySelector(this.seletorButtonList).addEventListener("click",
-        () => {this.CadastrarPost(boxList,boxForm)});
+        () => {this.CadastrarPost()});
         document.querySelector(this.seletorButtonForm).addEventListener("click",
-        () => {this.ListarPosts(boxList,boxForm)});
+        () => {this.ListarPosts()});
     }
 }
 
@@ -47,7 +49,7 @@ class BoxList {
     }
 
    
-    init(){
+    private init(){
 
     }
 
@@ -70,10 +72,11 @@ class BoxForm{
     }
 
    
-    init(){
+    private init(){
 
     }
 
 }
 
-let paginaPost = new Post03();
+
+let paginaPost = new Post03(new BoxList(),new BoxForm());

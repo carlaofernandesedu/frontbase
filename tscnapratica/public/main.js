@@ -1,7 +1,7 @@
 requirejs.config(
 {
    baseUrl:'./',
-   paths:{ 'posts' : 'posts03eventmanager' }
+   paths:{ 'posts' : 'posts-module' }
 });
 
 requirejs(['posts', function(){

@@ -179,3 +179,24 @@ Livre para definir o sistema de carregamento e tambem qual biblioteca fara esse 
 O proprio sistema de carregamento que cuidara desse processo de carregar os javascript por modulos 
 e nao o navegador
 No caso do curso usou a biblioteca REQUIREJS
+
+
+Necessario instalar o lite server 
+Lightweight development only node server that serves a web app, opens it in the browser, 
+refreshes when html or javascript change, 
+injects CSS changes using sockets, and has a fallback page when a route is not found.
+
+O Lite Server é um servidor HTTP (Lightweight development only node server that serves a web app), 
+escrito em node JS, que nos permite rodar nossos web apps escritos em HTML e Javascript. 
+Assim como o HTTP Server (ferramenta que já apresentei em vídeos anteriores), 
+o lite-server permite testar nossas web apps de forma simples e rápida.
+npm install --save-dev lite-server
+
+npm install lite-server --save-dev
+yarn add lite-server --dev # or yarn
+...and add a "script" entry within your project's package.json file:
+
+# Inside package.json...
+  "scripts": {
+    "dev": "lite-server"
+  },

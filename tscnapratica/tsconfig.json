@@ -3,7 +3,7 @@
         "target": "es5",
         "outDir": "public",
         "rootDir": "src",
-        // "module": "AMD"
+        "module": "AMD",
         "sourceMap": true
     },
     "files" : ["src/aulaintroducao.ts",

@@ -5,7 +5,7 @@ interface ListenerInterface
 
 class EventManager
 {
-    private listeners = {};
+    private listeners : { [eventName:string] : Array<ListenerInterface> } = {};
 
     addListeners(eventName:string, callable:ListenerInterface)
     {

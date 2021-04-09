@@ -1,4 +1,4 @@
-export class BoxListEvm {
+export class BoxListModule {
 
     static Id:string = 'box-post-list';
     constructor(){
@@ -6,7 +6,7 @@ export class BoxListEvm {
     
     Esconder(esconder:boolean)
     {
-        const elemento = document.getElementById(BoxListEvm.Id);
+        const elemento = document.getElementById(BoxListModule.Id);
         if(esconder)
           elemento.style.display = 'none';
         else 

@@ -1,13 +1,13 @@
-interface ListenerInterface
+interface ListenerInterfaceModule
 {
     ():void
 }
 
-export class EventManager
+export class EventManagerModule
 {
-    private listerers:{[eventName:string]:Array<ListenerInterface>} = {};
+    private listerers:{[eventName:string]:Array<ListenerInterfaceModule>} = {};
 
-    addListeners(eventName:string, callable:ListenerInterface)
+    addListeners(eventName:string, callable:ListenerInterfaceModule)
     {
        if(!(this.listerers[eventName] instanceof Array)){
            this.listerers[eventName] = [];

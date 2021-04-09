@@ -172,3 +172,10 @@ import EventManager from './event-manager';
 Por padrao esta usando sistema de carregamento commonjs
 Modificou para que o sistema de carregamento passe ser o AMD 
 
+*************************************
+Configuracao do Sistma de Carregamento para as paginas 
+*************************************
+Livre para definir o sistema de carregamento e tambem qual biblioteca fara esse procedimento 
+O proprio sistema de carregamento que cuidara desse processo de carregar os javascript por modulos 
+e nao o navegador
+No caso do curso usou a biblioteca REQUIREJS

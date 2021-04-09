@@ -1,4 +1,4 @@
-export class BoxFormEvm{
+export class BoxFormModule{
     static Id:string = 'box-post-form';
     constructor(){
         this.init();
@@ -6,7 +6,7 @@ export class BoxFormEvm{
     
     Esconder(esconder:boolean)
     {
-        const elemento = document.getElementById(BoxFormEvm.Id);
+        const elemento = document.getElementById(BoxFormModule.Id);
         if(esconder)
           elemento.style.display = 'none';
         else 

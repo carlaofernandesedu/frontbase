@@ -1,26 +1,6 @@
-interface ListenerInterface
-{
-    ():void
-}
-
-class EventManager
-{
-    private listerers:{[eventName:string]:Array<ListenerInterface>} = {};
-
-    addListeners(eventName:string, callable:ListenerInterface)
-    {
-       if(!(this.listerers[eventName] instanceof Array)){
-           this.listerers[eventName] = [];
-       }
-       this.listerers[eventName].push(callable);
-    }
-
-    runEventName(eventName:string){
-        for(let callable of this.listerers[eventName] ){
-           callable();
-        }
-    }
-}
+import {EventManager} from './event-manager';
+import {BoxListEvm} from './boxlistevm';
+import {BoxFormEvm} from './boxformevm';
 
 class Post03Evm
 {
@@ -58,51 +38,4 @@ class Post03Evm
     }
 }
 
-class BoxListEvm {
-
-    static Id:string = 'box-post-list';
-    constructor(){
-    }
-    
-    Esconder(esconder:boolean)
-    {
-        const elemento = document.getElementById(BoxList.Id);
-        if(esconder)
-          elemento.style.display = 'none';
-        else 
-          elemento.removeAttribute('style');
-        
-    }
-
-   
-    private init(){
-
-    }
-
-}
-
-
-class BoxFormEvm{
-    static Id:string = 'box-post-form';
-    constructor(){
-        this.init();
-    }
-    
-    Esconder(esconder:boolean)
-    {
-        const elemento = document.getElementById(BoxForm.Id);
-        if(esconder)
-          elemento.style.display = 'none';
-        else 
-          elemento.removeAttribute('style');
-    }
-
-   
-    private init(){
-
-    }
-
-}
-
-const eventManagerEvm = new EventManager();
-let paginaPostEvm = new Post03Evm(new BoxListEvm(),new BoxFormEvm(),eventManagerEvm);
+new Post03Evm(new BoxListEvm(),new BoxFormEvm(),new EventManager());

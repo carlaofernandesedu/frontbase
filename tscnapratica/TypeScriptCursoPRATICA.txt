@@ -143,3 +143,32 @@ interface ObjectValue{
    categoria:string,
    product?: string
  }
+
+
+************************************
+AULA - SISTEMA DE MODULOS 
+*************************************
+sistema de modulos - amd , varios sistema de carregamentos 
+Organizar em modulos 
+Convencao Quebec  para colocar arquivos 
+CamelCase 
+
+Estrategia de organizar modulos 
+duas formas de usar externamente class ou interface 
+uso export ou defaul na frente da class
+
+Exemplo com export na frente da class
+export class EventManager 
+depois na classe que usara
+import {EventManager} from './event-manager';
+
+import {EventManager,Classe2} from './event-manager';
+
+Exemplo com export com default 
+default class  e tirar o nome da class
+depois na classe que usara voce coloca um nome 
+import EventManager from './event-manager';
+
+Por padrao esta usando sistema de carregamento commonjs
+Modificou para que o sistema de carregamento passe ser o AMD 
+

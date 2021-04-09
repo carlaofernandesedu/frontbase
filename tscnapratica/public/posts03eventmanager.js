@@ -1,21 +1,8 @@
-var EventManager = /** @class */ (function () {
-    function EventManager() {
-        this.listerers = {};
-    }
-    EventManager.prototype.addListeners = function (eventName, callable) {
-        if (!(this.listerers[eventName] instanceof Array)) {
-            this.listerers[eventName] = [];
-        }
-        this.listerers[eventName].push(callable);
-    };
-    EventManager.prototype.runEventName = function (eventName) {
-        for (var _i = 0, _a = this.listerers[eventName]; _i < _a.length; _i++) {
-            var callable = _a[_i];
-            callable();
-        }
-    };
-    return EventManager;
-}());
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var event_manager_1 = require("./event-manager");
+var boxlistevm_1 = require("./boxlistevm");
+var boxformevm_1 = require("./boxformevm");
 var Post03Evm = /** @class */ (function () {
     function Post03Evm(_boxLista, _boxForm, eventManager) {
         this._boxLista = _boxLista;
@@ -44,37 +31,5 @@ var Post03Evm = /** @class */ (function () {
     Post03Evm.acaoListarPosts = "ListarPosts";
     return Post03Evm;
 }());
-var BoxListEvm = /** @class */ (function () {
-    function BoxListEvm() {
-    }
-    BoxListEvm.prototype.Esconder = function (esconder) {
-        var elemento = document.getElementById(BoxList.Id);
-        if (esconder)
-            elemento.style.display = 'none';
-        else
-            elemento.removeAttribute('style');
-    };
-    BoxListEvm.prototype.init = function () {
-    };
-    BoxListEvm.Id = 'box-post-list';
-    return BoxListEvm;
-}());
-var BoxFormEvm = /** @class */ (function () {
-    function BoxFormEvm() {
-        this.init();
-    }
-    BoxFormEvm.prototype.Esconder = function (esconder) {
-        var elemento = document.getElementById(BoxForm.Id);
-        if (esconder)
-            elemento.style.display = 'none';
-        else
-            elemento.removeAttribute('style');
-    };
-    BoxFormEvm.prototype.init = function () {
-    };
-    BoxFormEvm.Id = 'box-post-form';
-    return BoxFormEvm;
-}());
-var eventManagerEvm = new EventManager();
-var paginaPostEvm = new Post03Evm(new BoxListEvm(), new BoxFormEvm(), eventManagerEvm);
+new Post03Evm(new boxlistevm_1.BoxListEvm(), new boxformevm_1.BoxFormEvm(), new event_manager_1.EventManager());
 //# sourceMappingURL=posts03eventmanager.js.map

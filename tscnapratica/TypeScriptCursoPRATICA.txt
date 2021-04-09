@@ -1,5 +1,7 @@
 Type Script na pratica
 
+https://github.com/schoolofnetcom/typescript2-na-pratica
+
 CONFIGURACOES PARA O GIT GLOBAL 
 git config --global user.name "Carlos Melo"
 git config --global user.email "carlaofernandesedu@gmail.com"

@@ -62,9 +62,84 @@ AULA 3 - O QUE NAO FAZER EM TYPESCRIPT
 Da dicas de modelar por objeto 
 
 ******************************************************
-AULA 4 - SOURCEMAP E DEBUG  
+AULA - RECURSOS DE OO SENDO USADOS E EVENT MANAGER 
+*****************************************************
+Utilizado mecanismos de orientação a objetos para organizar melhor o codigo 
+Utilizado tecnica para desacoplar a chamada entre as classes 
+Event Manager  
+class EventManager
+{
+    private listerers = [];
+
+    addListeners(eventName, callable)
+    {
+       if(!(this.listerers[eventName] instanceof Array)){
+           this.listerers[eventName] = [];
+       }
+       this.listerers[eventName].push(callable);
+    }
+
+    runEventName(eventName){
+        for(let callable of this.listerers[eventName] ){
+           callable();
+        }
+    }
+}
+
+
+******************************************************
+AULA 5 - SOURCEMAP E DEBUG  
 *****************************************************
 comando que gera o arquivo sourcemap que diz ao browser como fazer o mapeamento de typescript
 com o javascript gerado 
 
 comando npm run tsc --sourceMap ou colocar dentro do arquvo tsconfig.json 
+
+AULA 6 - DESCREVENDO TIPOS 
+
+Importante entender com descrever o item Tipado relacionado a funcao 
+interface ListernerInterface
+{
+  ():void
+}
+ou 
+Dentro de declaracao 
+(eventName: string , callable: {():void})
+
+
+DECLARACAO COM CHAVE VALOR 
+private listeners : { [eventName:string]: Array<ListenerInterface> } = {};
+
+
+
+Tambem relembrar os conceitos de interface para definir moldes para funcoes e dentro 
+de declaracoes de membros de instancias tambem
+
+REPASSANDO 
+function show(obj:{category:"cat",product:"product"} ) //aqui tipei e informei conteudo padrao
+function show({categoria,produto}:{categoria:string,produto:string}) // ao inves de trabalhar com objeto 
+
+const soma = (x:number,y:number):number =>
+{
+  return x + y; 
+}
+
+function soma(x:number,y:number):number
+{
+  return x + y; 
+}
+
+const soma = (x:number,y:number):number => x+y;
+
+PARAMETROS DEFAULT
+ let DefaultParameters = (nome,apelido:string = 'Junior') =>
+ {}
+PARAMETROS OPCIONAIS 
+ let OptionalParameters = (nome:string, apelido?:string) => 
+ {
+ }
+
+interface ObjectValue{
+   categoria:string,
+   product?: string
+ }

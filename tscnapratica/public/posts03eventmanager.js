@@ -1,6 +1,6 @@
 var EventManager = /** @class */ (function () {
     function EventManager() {
-        this.listerers = [];
+        this.listerers = {};
     }
     EventManager.prototype.addListeners = function (eventName, callable) {
         if (!(this.listerers[eventName] instanceof Array)) {

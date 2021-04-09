@@ -1,8 +1,13 @@
+interface ListenerInterface
+{
+    ():void
+}
+
 class EventManager
 {
-    private listerers = [];
+    private listerers:{[eventName:string]:Array<ListenerInterface>} = {};
 
-    addListeners(eventName, callable)
+    addListeners(eventName:string, callable:ListenerInterface)
     {
        if(!(this.listerers[eventName] instanceof Array)){
            this.listerers[eventName] = [];
@@ -10,7 +15,7 @@ class EventManager
        this.listerers[eventName].push(callable);
     }
 
-    runEventName(eventName){
+    runEventName(eventName:string){
         for(let callable of this.listerers[eventName] ){
            callable();
         }

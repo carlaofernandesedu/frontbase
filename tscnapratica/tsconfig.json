@@ -3,7 +3,8 @@
         "target": "es5",
         "outDir": "public",
         "rootDir": "src",
-        "sourceMap": true
+        "sourceMap": true,
+        "module": "AMD"
     },
     "files" : ["src/aulaintroducao.ts","src/posts03.ts","src/posts03eventmanager.ts"],
     "exclude": [

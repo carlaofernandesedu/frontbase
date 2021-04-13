@@ -1,11 +1,14 @@
 {
     "compilerOptions": {
-        "target": "ES5",
+        "target": "es5",
         "outDir": "public/js",
         "rootDir": "src",
         "sourceMap": true,
-        "module":"AMD"
+        "inlineSources": true,
+        "module":"amd"
     },
+    "files" : ["src/teste.ts",
+        "src/post-oldway.ts"],
     "exclude": [
         "node_modules"
     ]

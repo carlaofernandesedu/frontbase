@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "tsc",
-    "devls": "live-server"
+    "tsc": "tsc -w",
+    "devls": "live-server ./public",
+    "lstsc": "concurrently \"npm run tsc\" \"npm run devls\""
   },
   "author": "Carlos Melo",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^6.0.1",
     "typescript": "^2.6.2"
   },
   "dependencies": {

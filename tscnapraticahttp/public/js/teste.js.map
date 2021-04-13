@@ -1,1 +1,1 @@
-{"version":3,"file":"teste.js","sourceRoot":"","sources":["../../src/teste.ts"],"names":[],"mappings":";;;IAEA,KAAK,CAAC,2CAA2C,CAAC,CAAC"}
+{"version":3,"file":"teste.js","sourceRoot":"","sources":["../../src/teste.ts"],"names":[],"mappings":";;;IACA,qCAAqC;IACrC,OAAO,CAAC,GAAG,CAAC,+BAA+B,CAAC,CAAC;IAC7C,KAAK,CAAC,2CAA2C,CAAC,CAAC;;AACnD,wBAAwB","sourcesContent":["import 'modulo01';\r\n//import OldHttp from 'http/old-http'\r\nconsole.log('Teste de montagem de ambiente');\r\nalert('Teste de mecanismo de execucao de modulos');\r\n//new OldHttp().query();"]}

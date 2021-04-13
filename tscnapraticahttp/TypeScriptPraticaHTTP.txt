@@ -1,0 +1,60 @@
+********************************
+AULA 1 
+*******************************
+Montar esturutura 
+********************************
+AULA 2 
+*******************************
+instalar localmente o typescript
+usar ouro servidor para carregar paginas html e javascript 
+********************************
+AULA 3  
+*******************************
+dentro do package.json 
+voce pode trabalhar com dois comandos em unico item só dentro do nodejs 
+para facilitar a execucao de dois comandos 
+npm install concurrently --save-dev 
+
+criar um comando para executar duas coisas 
+"tsc": "/node_modules/.bin/tsc -w",
+"server": "/nonde_modules/.bin/live-server",
+"dev": "./node_modules/.bin/concurrently \"npm run tsc\" \"npm run server\""
+
+tambem pode colocar um comando para executar o live-server a partir da public
+"server": "/nonde_modules/.bin/live-server ./public",
+
+********************************
+AULA 4 CONFIGURANDO O SOURCE MAPS CORRETAMENTE   
+*******************************
+Procedimentos adicionais de configuracao 
+como usa mapa de uma pasta de html e nao acessa a pasta de codigo fonte 
+ele nao conhece esse arquivo 
+Uso do inlinesource: true 
+Ele consegue encaminhar para o browser o codigo fonte para o navegador dos arquivos TS 
+
+inlineSources: true (Coloca o conteudo do arquivos ts para dentro do sourcemap)
+
+
+*********************************************
+AULA 5 COMO NAO USAR O AJAX 
+*********************************************
+Entenda o problema 
+Cadastro de Posts , Paginas         , Requisicoes HTTP  , Ajax 
+Listagem de Posts , Elementos HTML 5                    , Requisicao
+                  , Eventos                             ,Resposta
+
+cadastar post e listar posts
+
+TEM UMA SITE PARA SIMULAR TESTES SIMPLES DE AJAX PARA ESTUDO DE JAVASCRIPT 
+https://jsonplaceholder.typicode.com 
+Tem um API que pode acionar para realizar os testes 
+https://jsonplaceholder.typicode.com/posts
+
+CARREGADOR DE MODULOS 
+RequireJS is a JavaScript file and module loader. It is optimized for in-browser use, but it can be used in other JavaScript environments, like Rhino and Node. Using a modular script loader like RequireJS will improve the speed and quality of your code.
+
+*********************************************
+AULA 6 REFATORACAO DO JAVASCRIPT 
+*********************************************
+
+

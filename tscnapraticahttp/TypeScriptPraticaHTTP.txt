@@ -56,5 +56,13 @@ RequireJS is a JavaScript file and module loader. It is optimized for in-browser
 *********************************************
 AULA 6 REFATORACAO DO JAVASCRIPT 
 *********************************************
+CRIADO UMA CLASSE ESPECIFICA PARA CRIACAO E TRATAMENTO DO OBJETO XMLHTTPREQUEST
 
-
+*********************************************
+AULA 7 PROMISE 
+*********************************************
+Padrao que indica um item prometido 
+a ser resolvido e ser rejeitado 
+de encontro com o modelo de requisicao do ajax que normalmente trabalhamos 
+com a condicao de possivel sucesso e retorno de erro 
+faremos adaptacao e refatoracao do metodo HttpCliet 

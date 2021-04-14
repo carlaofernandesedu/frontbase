@@ -1,6 +1,7 @@
 
 import OldHttp from 'http/old-http';
 import HttpClient from 'http/http-client';
+import PostTable from 'components/post-table';
 
 class PostOldWay
 {
@@ -10,8 +11,9 @@ class PostOldWay
     }
 
     listar(resposta){
-      let elemento = document.getElementById('#listapost');
-      console.log(resposta);
+      console.log("servico retornado:");
+      new PostTable("#my-table>tbody",JSON.parse(resposta),["title","body"]).make();
+      
     }
 
     private init(){

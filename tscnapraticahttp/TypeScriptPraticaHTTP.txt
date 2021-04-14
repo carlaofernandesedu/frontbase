@@ -66,3 +66,39 @@ a ser resolvido e ser rejeitado
 de encontro com o modelo de requisicao do ajax que normalmente trabalhamos 
 com a condicao de possivel sucesso e retorno de erro 
 faremos adaptacao e refatoracao do metodo HttpCliet 
+
+*********************************************
+AULA 7 INSTALANDO O TYPE PROMISE
+*********************************************
+um monte de tipos pre-definidos que pode instalar 
+outros tipos de terceiros 
+Github muito usado pela comunidade 
+que oferece muitos tipo de type script 
+DefintelyTyped 
+https://github.com/DefinitelyTyped/DefinitelyTyped
+
+npm install @types/es6-promise --save-dev 
+dentro do node modules  veja o index.d.ts definicao 
+
+dentro do arquivo tsconfig.json 
+typeroots colocar varios caminhos onde estao os caminhos 
+types nomes dos tipos 
+ex:
+typeroots [node_modules/@types]
+type [es6-promise] 
+
+quando tem tipos padroes que o typescript usa muito ele ja procura o node modules automaticamente 
+por isso nao precisaremos fazer esse ajuste  
+
+PROBLEMAS PARA USAR A BIBLIOTECA 
+
+
+*********************************************
+AULA 7 INSTALANDO O TYPE PROMISE
+*********************************************
+Retornar uma promessa ... 
+Com a promessa me da a possibilidade de captura o retorno e 
+fazer o tratamento de duas situacoes o sucesso e erro 
+Não é necessario injetar as funcoes dentro do processo para conseguirem 
+ser executadas 
+

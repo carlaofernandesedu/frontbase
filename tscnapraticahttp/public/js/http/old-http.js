@@ -1,14 +1,16 @@
 define(["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var OldHttp = /** @class */ (function () {
-        function OldHttp(httpClient) {
+    class OldHttp {
+        constructor(httpClient) {
             this.httpClient = httpClient;
         }
-        OldHttp.prototype.query = function (callable) {
+        query(callable) {
             console.log('iniciando comunicacao com servico');
-            var url = 'https://jsonplaceholder.typicode.com/posts';
-            this.httpClient.get(url);
+            const url = 'https://jsonplaceholder.typicode.com/posts';
+            this.httpClient.get(url).then((response) => {
+                callable(response.body);
+            });
             // conexaoHttp.onreadystatechange = function()
             // {
             //     if(this.readyState == 4 && this.status == 200)
@@ -18,11 +20,10 @@ define(["require", "exports"], function (require, exports) {
             //     }
             // }
             // conexaoHttp.send();
-        };
-        OldHttp.prototype.post = function () {
-        };
-        return OldHttp;
-    }());
+        }
+        post() {
+        }
+    }
     exports.default = OldHttp;
 });
 //# sourceMappingURL=old-http.js.map

@@ -5,5 +5,5 @@ define(["require", "exports", "modulo01"], function (require, exports) {
     console.log('Teste de montagem de ambiente');
     alert('Teste de mecanismo de execucao de modulos');
 });
-//new OldHttp().query(); 
+//new OldHttp().query();
 //# sourceMappingURL=teste.js.map

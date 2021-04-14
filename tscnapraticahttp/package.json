@@ -1,7 +1,7 @@
 {
   "name": "tscnapraticahttp",
   "version": "1.0.0",
-  "description": "Exercicios typescript com http",
+  "description": "Exercicio typescript http",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,10 +12,8 @@
   "author": "Carlos Melo",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^6.0.1",
-    "typescript": "^2.6.2"
-  },
-  "dependencies": {
-    "live-server": "^1.2.1"
+    "concurrently": "^6.0.2",
+    "live-server": "^1.2.1",
+    "typescript": "^4.2.4"
   }
 }

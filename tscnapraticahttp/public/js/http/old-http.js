@@ -11,15 +11,6 @@ define(["require", "exports"], function (require, exports) {
             this.httpClient.get(url).then((response) => {
                 callable(response.body);
             });
-            // conexaoHttp.onreadystatechange = function()
-            // {
-            //     if(this.readyState == 4 && this.status == 200)
-            //     {
-            //         console.log('retornou dados');
-            //         callable(this.responseText);
-            //     }
-            // }
-            // conexaoHttp.send();
         }
         post() {
         }

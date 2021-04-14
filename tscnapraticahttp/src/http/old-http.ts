@@ -1,5 +1,5 @@
-import HttpClient from 'http-client'
-import HttpResposta from 'http-resposta';
+import HttpClient from './http-client';
+import HttpResposta from './http-resposta';
 
 export default class OldHttp
 {
@@ -15,16 +15,6 @@ export default class OldHttp
                 callable(response.body);
             }
         );
-        // conexaoHttp.onreadystatechange = function()
-        // {
-        //     if(this.readyState == 4 && this.status == 200)
-        //     {
-        //         console.log('retornou dados');
-        //         callable(this.responseText);
-        //     }
-        // }
-        
-        // conexaoHttp.send();
     }
 
     post(){

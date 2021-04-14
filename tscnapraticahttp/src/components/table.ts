@@ -1,12 +1,17 @@
 export default abstract class Table{
 
-    constructor(private querySelector:string,private data:Array<any>,private columns:Array<string>){
+    constructor(private querySelector:string,private columns:Array<string>,private _data?:Array<any>){
+    }
+
+    set Data(value:Array<any>)
+    {
+        this._data = value;
     }
 
     protected createRows(){
       
         let tableHtml = this.get();
-        for(let rowData of this.data)
+        for(let rowData of this._data)
         {
             const rowHtml = document.createElement('tr');
             for(let columnName of this.columns)

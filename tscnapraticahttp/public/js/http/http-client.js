@@ -27,12 +27,6 @@ define(["require", "exports", "http/http-resposta"], function (require, exports,
                         resolve(resposta);
                     }
                 }
-                // if(this.readyState == 4 && this.status == 200)
-                // {
-                //     console.log('retornou dados');
-                //     resolve(conexaoHttp.responseText);
-                // }
-                //reject(conexaoHttp.responseText)
             };
             conexaoHttp.send();
         }

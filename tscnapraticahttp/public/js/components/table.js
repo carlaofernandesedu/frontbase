@@ -2,14 +2,17 @@ define(["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     class Table {
-        constructor(querySelector, data, columns) {
+        constructor(querySelector, columns, _data) {
             this.querySelector = querySelector;
-            this.data = data;
             this.columns = columns;
+            this._data = _data;
+        }
+        set Data(value) {
+            this._data = value;
         }
         createRows() {
             let tableHtml = this.get();
-            for (let rowData of this.data) {
+            for (let rowData of this._data) {
                 const rowHtml = document.createElement('tr');
                 for (let columnName of this.columns) {
                     this.createColumn(rowHtml, rowData[columnName]);

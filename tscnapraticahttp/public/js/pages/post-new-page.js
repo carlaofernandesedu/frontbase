@@ -1,4 +1,4 @@
-define(["require", "exports", "../http/http-wrapper", "../components/form"], function (require, exports, http_wrapper_1, form_1) {
+define(["require", "exports", "../http/http-wrapper", "../components/form", "../components/validators/validator-manager", "../components/validators/validator"], function (require, exports, http_wrapper_1, form_1, validator_manager_1, validator_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     class PostNewPage {
@@ -14,6 +14,8 @@ define(["require", "exports", "../http/http-wrapper", "../components/form"], fun
             });
         }
         submit() {
+            if (!this.isValid())
+                return;
             let data = { title: form_1.default.getValueFromField("#title"), body: form_1.default.getValueFromField("#body") };
             this.httpWrapper.post(data).then((response) => {
                 console.log(response);
@@ -21,7 +23,11 @@ define(["require", "exports", "../http/http-wrapper", "../components/form"], fun
             });
         }
         isValid() {
-            return false;
+            let validator = new validator_manager_1.default([
+                { selector: '#title', rules: [validator_1.default.required, validator_1.default.mincarac], message: 'titulo invalido' },
+                { selector: '#body', rules: [validator_1.default.required], message: 'conteudo invalido' }
+            ]);
+            return validator.isValid();
         }
         init() {
             this.associarEventos();

@@ -11,6 +11,14 @@ define(["require", "exports", "http/http-resposta"], function (require, exports,
             return new Promise((resolve, reject) => {
                 let conexaoHttp = this.createXmlHttpRequest(httpVerbs.GET, url);
                 this.configureCallbacks(conexaoHttp, resolve, reject);
+                conexaoHttp.send();
+            });
+        }
+        post(url, data) {
+            return new Promise((resolve, reject) => {
+                let conexaoHttp = this.createXmlHttpRequest(httpVerbs.POST, url);
+                this.configureCallbacks(conexaoHttp, resolve, reject);
+                conexaoHttp.send(data);
             });
         }
         createXmlHttpRequest(verb, url) {
@@ -22,13 +30,12 @@ define(["require", "exports", "http/http-resposta"], function (require, exports,
         configureCallbacks(conexaoHttp, resolve, reject) {
             conexaoHttp.onreadystatechange = function () {
                 if (this.readyState == 4) {
-                    if (this.status == 200) {
+                    if (this.status == 200 || this.status == 201) {
                         const resposta = new http_resposta_1.default(this.responseText, this.status);
                         resolve(resposta);
                     }
                 }
             };
-            conexaoHttp.send();
         }
     }
     exports.default = HttpClient;

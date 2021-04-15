@@ -1,5 +1,6 @@
 import Page from './page';
 import HttpWrapper from '../http/http-wrapper';
+import Form from '../components/form';
 
 
 class PostNewPage implements Page{
@@ -18,7 +19,12 @@ class PostNewPage implements Page{
     }
 
     submit(){
-        alert('ok');
+        let data = { title:Form.getValueFromField("#title"), body:Form.getValueFromField("#body") };
+        this.httpWrapper.post(data).then
+        ((response:object)=>{
+            console.log(response);
+            alert('submetido' + data.title +  '-' + data.body);
+        });
     }
 
     isValid():boolean

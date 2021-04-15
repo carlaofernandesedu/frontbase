@@ -1,4 +1,4 @@
-define(["require", "exports", "../http/http-wrapper"], function (require, exports, http_wrapper_1) {
+define(["require", "exports", "../http/http-wrapper", "../components/form"], function (require, exports, http_wrapper_1, form_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     class PostNewPage {
@@ -14,7 +14,11 @@ define(["require", "exports", "../http/http-wrapper"], function (require, export
             });
         }
         submit() {
-            alert('ok');
+            let data = { title: form_1.default.getValueFromField("#title"), body: form_1.default.getValueFromField("#body") };
+            this.httpWrapper.post(data).then((response) => {
+                console.log(response);
+                alert('submetido' + data.title + '-' + data.body);
+            });
         }
         isValid() {
             return false;

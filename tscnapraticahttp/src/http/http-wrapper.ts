@@ -11,15 +11,19 @@ export default class HttpWrapper
 
 
     query():Promise<Array<any>>{
-        console.log('iniciando comunicacao com servico');
+        console.log('iniciando comunicacao com servico via GET');
         const url='https://jsonplaceholder.typicode.com/posts';
         return this.httpClient.get(url).then(function (response:HttpResposta) {
                return JSON.parse(response.body);
             });
     }
 
-    post(){
-
+    post(data:{title:string,body:string}):Promise<object>{
+        console.log('iniciando comunicacao com servico via POST');
+        const url='https://jsonplaceholder.typicode.com/posts';
+        return this.httpClient.post(url,data).then(function (response:HttpResposta) {
+               return JSON.parse(response.body);
+            });
     }    
 
 }

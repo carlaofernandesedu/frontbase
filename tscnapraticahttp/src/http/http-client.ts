@@ -13,6 +13,16 @@ export default class HttpClient{
           return new Promise( (resolve,reject) =>{
             let conexaoHttp = this.createXmlHttpRequest(httpVerbs.GET,url);
             this.configureCallbacks(conexaoHttp,resolve,reject);
+            conexaoHttp.send();
+        });
+    } 
+
+    post(url:string,data:any) : Promise<HttpResposta>
+    {
+          return new Promise( (resolve,reject) =>{
+            let conexaoHttp = this.createXmlHttpRequest(httpVerbs.POST,url);
+            this.configureCallbacks(conexaoHttp,resolve,reject);
+            conexaoHttp.send(data);
         });
     } 
 
@@ -30,14 +40,12 @@ export default class HttpClient{
         {
             if(this.readyState == 4)
             {
-                if(this.status==200)
+                if(this.status==200 ||this.status==201)
                 {
                     const resposta = new HttpResposta(this.responseText,this.status);
                     resolve(resposta);
                 }
             }
         }
-        
-        conexaoHttp.send();
     }   
 }

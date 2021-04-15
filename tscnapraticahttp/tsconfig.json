@@ -8,7 +8,8 @@
         "module":"amd"
     },
     "files" : ["src/teste.ts",
-        "src/post-oldway.ts"],
+        "src/post-oldway.ts",
+        "src/pages/post-list-page.ts"],
     "exclude": [
         "node_modules"
     ]

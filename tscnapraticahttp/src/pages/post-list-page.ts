@@ -25,3 +25,5 @@ class PostListPage implements Page{
 }
 
 const postTable = new PostTable("#my-table>tbody",["title","body"]);
+const httpWrapper = new HttpWrapper();
+new PostListPage(httpWrapper,postTable);

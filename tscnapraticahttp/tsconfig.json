@@ -9,7 +9,8 @@
     },
     "files" : ["src/teste.ts",
         "src/post-oldway.ts",
-        "src/pages/post-list-page.ts"],
+        "src/pages/post-list-page.ts",
+        "src/pages/post-new-page.ts"],
     "exclude": [
         "node_modules"
     ]

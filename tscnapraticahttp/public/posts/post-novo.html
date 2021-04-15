@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Script na pratica com Http - Cadastro</title>
+</head>
+<body>
+    <h1>Type Script na pratica com Http - Cadastro</h1>
+    <h3>Criar novo post</h3>
+    <form id="my-form">
+        <input type="hidden" name="id">
+        <div class="form-group">
+            <label for="title">Titulo</label>
+            <input type="text" name="tite" id="title" placeholder="Titulo">
+        </div>
+        <div class="form-group">
+            <label for="body">Conteudo</label>
+            <textarea name="body" id="body"></textarea>
+        </div>
+        <button type="submit">Cadastrar</button>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
+    <script type="text/javascript">
+        var MODULE_INITIALIZER = 'pages/post-new-page';
+    </script>
+    <script src="../js/post-main.js"></script>
+</body>
+</html>

@@ -15,7 +15,7 @@ class PostListPage implements Page{
         ((posts:Array<any>)=>{
            this.postTable.Data = posts;
            this.postTable.make();     
-        });
+        },(response:any)=>{ alert(response.status);});
     }
     
     init(): void {

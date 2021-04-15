@@ -30,9 +30,14 @@ define(["require", "exports", "http/http-resposta"], function (require, exports,
         configureCallbacks(conexaoHttp, resolve, reject) {
             conexaoHttp.onreadystatechange = function () {
                 if (this.readyState == 4) {
-                    if (this.status == 200 || this.status == 201) {
-                        const resposta = new http_resposta_1.default(this.responseText, this.status);
+                    const resposta = new http_resposta_1.default(this.responseText, this.status);
+                    if (this.status.toString().startsWith('20')) {
                         resolve(resposta);
+                    }
+                    else {
+                        if (this.status.toString().startsWith('40') || this.status.toString().startsWith('50')) {
+                            reject(resposta);
+                        }
                     }
                 }
             };

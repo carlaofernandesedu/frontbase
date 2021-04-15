@@ -11,7 +11,7 @@ define(["require", "exports", "../components/post-table", "../http/http-wrapper"
             this.httpWrapper.query().then((posts) => {
                 this.postTable.Data = posts;
                 this.postTable.make();
-            });
+            }, (response) => { alert(response.status); });
         }
         init() {
             this.getPosts();

@@ -40,10 +40,17 @@ export default class HttpClient{
         {
             if(this.readyState == 4)
             {
-                if(this.status==200 ||this.status==201)
+                const resposta = new HttpResposta(this.responseText,this.status);
+                if(this.status.toString().startsWith('20'))
                 {
-                    const resposta = new HttpResposta(this.responseText,this.status);
                     resolve(resposta);
+                }
+                else 
+                {
+                    if(this.status.toString().startsWith('40') || this.status.toString().startsWith('50'))
+                    {
+                        reject(resposta);
+                    }
                 }
             }
         }

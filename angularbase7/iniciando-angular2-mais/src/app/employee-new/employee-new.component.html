@@ -1,0 +1,10 @@
+<label for="camplofluxots">Campo fluxo somente TS</label>
+<input type="text" name="camplofluxots" [value]="fluxots">
+<br>
+<label for="camplofluxohtmlts">Campo fluxo HTML e TS</label>
+<input type="text" name="camplofluxohtmlts" [(ngModel)]="fluxohtmlts">
+
+
+<p>O valor atualizado no TS prevalece e atualizar aqui {{fluxots}}</p>
+
+<p>O valor atualiza-se via html e TS {{fluxohtmlts}}</p>

@@ -1,0 +1,198 @@
+Iniciando no Angular 7 
+Nunca ouviu falar do Angular o que ele faz 
+Criar aplicacoes front end para WEB 
+Nao fazer nada parte do Servidor 
+Javascript rodar dentro do browser 
+DO LADO DO SERVIDOR usa outra linguagem 
+
+Historia do Angular 
+O Projeto Angular tem 10 anos de existencia 
+lancado em 2008 e 2009 a primeira versao do angular ANGULARJS  (é a versao um angularjs versao 1)
+foi evoluindo essa primeira versao. o Time do Angular tomou uma decisao 
+Refaz tudo e cria o novo framework nova biblioteca == só chamar ANGULAR 
+os sites das versao ANGULARJS e ANGULAR I/O  diferentes 
+https://angularjs.org e https://angular.io 
+
+Saiu com a versao 2  ou Angular 2+ 
+Saiu com a versao 4 5 6  (Continua chamar a versao do Angular 2 pela confusao de lancar outros numeros)
+Repositorio 
+https://github.com/angular/angular
+Tem o Arquivo CHANGELOG.MD lista uma serie de mudancas 
+
+Em Media 6 meses temos uma nova versao  na versao 12 atualmente  abril 2021 
+
+Os conceitos da versao 7 não teve grandes mudancas em relação a versao 6 
+Conceito de virtual scrooll - muita imagens a serem mostradas 
+CLI PROMPTS =  
+usa recursos de biblioteca visual prontas 
+Conceito de arrastar entre os blocos == DRAG AND DROP 
+
+Como atualizar um angular 6 para angular 7 
+o proprio NG faz a atualizacao para voce Soletra em ingles En Gi 
+npm install -g @angular/cli 
+executar ng version 
+mostra angular cli 7.0.4 
+Tomar cuidado com os conceitos de versoes globais e locais 
+
+na aplicacao verificar executando ng update 
+ele mostra as atualizacoes por biblioteca para avaliar 
+ng-update --all
+******************************************
+aula criando a aplicacao angular 
+******************************************
+No ambiente de desenvolvimento 
+Trabalhar com node JS  e Compilar o Codigo 
+INSTALAR UMA VERSAO PELO MENOS 8 NODE JS 
+verificar com comandos as versoes instaladas 
+node -v  
+npm -v 
+Instalar a ferramenta que criara o esqueleto da aplicacao
+npm install -g @angular/cli 
+ferramenta em linha de comnado para fazer uma serie de execucoes para dentro do projeto 
+ai voce apareceria 
+angular cli (lá no angular js e tinha a diretiva e fica apelidando)
+Para criar o aplicacao 
+ng new iniciando-angular2-mais 
+
+cd my-app
+ng serve --open (aqui o comando build o projeto e carregar um servidor web servindo as paginas)
+
+
+PROBLEMAS DE RODAR MULTIPLOS ANGULAR NA MESMA MAQUINA 
+https://dev.to/patricepeartree/how-to-run-multiple-node-and-angular-versions-simultaneously-3lfj
+ITEM A ESTUDAR 
+OUTRA ABORDAGEM 
+npx is really an useful tool, thanks for the tip!
+
+
+POSSUI EDITORES para ambos os suporte 
+VISUAL STUDIO CODE 
+
+npm i @angular/cli@7.3.10 --save-dev
+
+FAREI A INSTALACAO DA ULTIMA VERSAO 
+ng : O arquivo C:\Users\151786\AppData\Roaming\npm\ng.ps1 não pode ser carregado porque a execução de scripts foi desabilitada    
+neste sistema. Para obter mais informações, consulte about_Execution_Policies em https://go.microsoft.com/fwlink/?LinkID=135170.  
+No linha:1 caractere:1
+RESOLVER PROBLEMAS DE POLITICA DE EXECUCAO DO POWERSHELL 
+Set-ExecutionPolicy -ExecutionPolicy Undefined -Scope LocalMachine
+set-executionpolicy remotesigned
+USANDO A ULTIMA VERSAO DO ANGULAR //TESTES PARA VER SE FUNCIONA 
+Trabalhando com angular CLI - 11.2.9 
+
+******************************************
+aula react vs angular 
+******************************************
+reactjs 
+mantido pelo facebook 
+foco de criacao frontend para web 
+pode criar componentes 
+forma facil de poder modelar em componentes
+vuejs
+independente nenhuma empresa grande por trás 
+foco de criacao frontend para web 
+nao vai ter nucleo de administrar form, http trabalhar 
+pode criar componentes ,etc 
+angular.io 
+google ajuda a manter o angular 
+framework 
+vai alem somente criar um app web 
+criar service workers 
+criar desenvolvimento para desktop 
+criar app mobile 
+dentro do nucleo varios subnucleos 
+autenticacao, ajax/http , 
+nos dar uma camada de servicos 
+se preocupa em todoas as etapas do seu desenvolvimento
+
+precisa entender o proposito delas e qual definir o que vou usar 
+trabalham com o m esmo paradigma .. paradigma reativo 
+progrmacao mais dinamica , mais rapida 
+a programacao morta extensa e buroticratica = manipulando o dom da javascript 
+
+
+******************************************
+aula criando componentes 
+******************************************
+executando  o comando ng g component employee-list 
+geram pasta e quatro arquivos representando o componente a ser utilizado
+criam a tag personalizada
+******************************************
+aula entendendo componentes 
+******************************************
+primeiro componente 
+<app-root></app-root> = primeiro componente 
+
+iniciar pelo main.ts 
+existe uma importacao do pacotes
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app/app.module';
+
+@angular/core -> core do angular 
+@angular/platform-browser-dynamic ->  e vai permitir inicie o modulo prinicpal da aplicacao parte do framework micro biblioteca 
+'./app/app.module' -> no angular tem o conceito de modulo e componentes dentro desse modulo 
+é o modulo que abrigara os componentes 
+
+tem o decorator @NgModule que faz "decorar" a clase e se comportar como modulo 
+na classe indica-se os componentes que fazem parte do modulo 
+na classe indica quem sera o primeiro componente que dar o star dentro da interface 
+na classe via comando ng g componente é colocado o nome do component dentro do declarations 
+na classe tambem foi feito o import do componente 
+na parte do componente voce tem o decorator @Component para gerar comportamento de componente 
+na classe . observar que o componente pai é app-root 
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    EmployeeListComponent
+  ],
+  imports: [
+    BrowserModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'iniciando-angular2-mais';
+}
+
+
+******************************************
+aula conceito de data binding 
+******************************************
+Verificar o que programacao reativa 
+voce tem a variavel relacionada com o value de um elemento 
+
+Conceitos de fluxo de dados 
+01-  somente o Typescript atualiza os items dos html 
+a partir de uma relacao de databind 
+os items nao conseguem passar as informacoes para a variavel que representa o type script 
+<label for="camplofluxots">Campo fluxo somente TS</label>
+<input type="text" name="camplofluxots" [value]="fluxots">
+
+02 - tanto o typescript quanto o item html acabem sincronizando a mesma variavel 
+no arquivo de module importar o modulo
+import { FormsModule} from '@angular/forms';
+
+
+<label for="camplofluxohtmlts">Campo fluxo HTML e TS</label>
+<input type="text" name="camplofluxohtmlts" [(ngModel)]="fluxohtmlts">
+
+
+
+
+
+
+
+

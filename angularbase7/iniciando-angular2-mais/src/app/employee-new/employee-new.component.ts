@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import employeesglobal from '../employeesglobal';
 
 @Component({
   selector: 'employee-new',
@@ -9,16 +10,17 @@ export class EmployeeNewComponent implements OnInit {
 
   fluxots:string = 'componenteTS';
   fluxohtmlts:string = 'componenteHTMLTS';
-  name = 'Carlos Teste';
-  employee = [];
+  name:string = '';
+  salary:number = 0;
+  employees = employeesglobal;
 
   constructor() {  
     //setTimeout(()=>{this.fluxots = 'somenteTS alterado'},3000);
   }
 
   addEmployee(){
-    this.employee.push(this.name);
-    console.log(this.employee);
+    this.employees.push({name:this.name,salary:this.salary});
+    console.log(this.employees);
   }
 
   addEmployeeComEvento(event){

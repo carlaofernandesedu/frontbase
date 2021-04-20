@@ -209,8 +209,41 @@ console.log(event)
 console.log(employees)
 
 
+******************************************
+aula conceito de listagem de dados 
+******************************************
+conceito de criar objetos globais e serem referenciados entre os componentes 
+Criar um item em separado e faz a referencia 
 
 
+PARA CRIAR UM OBJETO A SER COMPARTILHADO 
+interface Employee{
+    name:string,
+    salary:number
+}
+const employeesglobal : Employee[] = [];
+
+export default employeesglobal;
+
+PARA ADICIONAR O OBJETO 
+name:string = '';
+  salary:number = 0;
+  employees = employeesglobal;
+
+ addEmployee(){
+    this.employees.push({name:this.name,salary:this.salary});
+    console.log(this.employees);
+  }
+
+PARA PODER EXIBIR PROCEDIMENTOS DE LISTAGEM NO TEMPLATE 
+<tbody>
+    <tr *ngFor="let employee of employees">
+        <!-- <td>{{employee.name}}</td>
+        <td>{{employee.salary}}</td> -->
+        <td [innerHtml]="employee.name"></td>
+        <td [innerHtml]="employee.salary"></td>
+    </tr>
+</tbody>
 
 
 

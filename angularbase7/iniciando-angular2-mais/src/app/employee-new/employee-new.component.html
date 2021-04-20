@@ -1,3 +1,5 @@
+<label>Testes de Fluxo de Dados</label>
+<hr>
 <label for="camplofluxots">Campo fluxo somente TS</label>
 <input type="text" name="camplofluxots" [value]="fluxots">
 <br>
@@ -8,8 +10,13 @@
 <hr>
 <br>
 <br>
+<label>Testes do Cadastro Adicionar Elementos e Visualizar</label>
+<br>
 <label for="name">Nome</label>
 <input type="text"  [(ngModel)]="name">
+<br>
+<label for="name">Salario</label>
+<input type="text"  [(ngModel)]="salary">
 <br>
 <button type="button" (click)="addEmployee()" >Adicionar Empregado</button>
 <button type="button" (click)="addEmployeeComEvento($event)"> Adicionar Empregado Com Evento</button>

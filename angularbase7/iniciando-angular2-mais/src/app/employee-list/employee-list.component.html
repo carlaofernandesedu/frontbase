@@ -1,2 +1,16 @@
 <h1>Lista dos Empregados</h1>
-<p>employee-list primeiro componente</p>
+<table><thead>
+    <tr>
+        <td>Nome</td>
+        <td>Salario</td>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let employee of employees">
+        <!-- <td>{{employee.name}}</td>
+        <td>{{employee.salary}}</td> -->
+        <td [innerHtml]="employee.name"></td>
+        <td [innerHtml]="employee.salary"></td>
+    </tr>
+</tbody>
+</table>

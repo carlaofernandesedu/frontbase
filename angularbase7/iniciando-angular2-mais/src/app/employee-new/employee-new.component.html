@@ -3,8 +3,13 @@
 <br>
 <label for="camplofluxohtmlts">Campo fluxo HTML e TS</label>
 <input type="text" name="camplofluxohtmlts" [(ngModel)]="fluxohtmlts">
-
-
-<p>O valor atualizado no TS prevalece e atualizar aqui {{fluxots}}</p>
-
-<p>O valor atualiza-se via html e TS {{fluxohtmlts}}</p>
+<p>O valor atualizado no TS prevalece desconsiderando HTML: {{fluxots}}</p>
+<p>O valor atualiza-se via html e TS: {{fluxohtmlts}}</p>
+<hr>
+<br>
+<br>
+<label for="name">Nome</label>
+<input type="text"  [(ngModel)]="name">
+<br>
+<button type="button" (click)="addEmployee()" >Adicionar Empregado</button>
+<button type="button" (click)="addEmployeeComEvento($event)"> Adicionar Empregado Com Evento</button>

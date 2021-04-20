@@ -9,8 +9,21 @@ export class EmployeeNewComponent implements OnInit {
 
   fluxots:string = 'componenteTS';
   fluxohtmlts:string = 'componenteHTMLTS';
+  name = 'Carlos Teste';
+  employee = [];
+
   constructor() {  
     //setTimeout(()=>{this.fluxots = 'somenteTS alterado'},3000);
+  }
+
+  addEmployee(){
+    this.employee.push(this.name);
+    console.log(this.employee);
+  }
+
+  addEmployeeComEvento(event){
+      console.log(event); 
+      this.addEmployee();
   }
 
   ngOnInit(): void {

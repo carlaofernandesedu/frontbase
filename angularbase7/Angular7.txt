@@ -184,11 +184,29 @@ os items nao conseguem passar as informacoes para a variavel que representa o ty
 02 - tanto o typescript quanto o item html acabem sincronizando a mesma variavel 
 no arquivo de module importar o modulo
 import { FormsModule} from '@angular/forms';
-
-
 <label for="camplofluxohtmlts">Campo fluxo HTML e TS</label>
 <input type="text" name="camplofluxohtmlts" [(ngModel)]="fluxohtmlts">
 
+nao ficou claro que o ngModel sempre esta implicit a propriedade value 
+
+
+******************************************
+aula conceito de eventos no angular 
+******************************************
+<button type="button" (click)="addEmployee()")>Adicionar</button>
+<button type="button" (click)="addEmployee($event)")>Adicionar</button>
+nao precisa usar o on no comeco do evento 
+simbologia do paresenteses 
+quando tenho paresentes envio do template para programacao (componente)
+quando tenho colchetes envio da programacao(componente) para o template 
+
+QUANDO USO OS DOIS TWO WAY DATA BINDING
+quando tenho paresentes envio do template para progrmacao 
+quando tenho colchetes envio da programacao para o template 
+
+
+console.log(event)
+console.log(employees)
 
 
 

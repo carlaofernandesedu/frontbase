@@ -246,4 +246,25 @@ PARA PODER EXIBIR PROCEDIMENTOS DE LISTAGEM NO TEMPLATE
 </tbody>
 
 
+******************************************
+aula propriedades reativas 
+******************************************
+tratar o estilo cor de um objeto por exemplo
+<td [style.color]="employee.salary > 20000? 'green':'black'" > 
+pode refatorar transformando em metodo no TS 
+getSalaryColor(employee)
+{
+  return employee.salary > 20000? 'green':'black';
+}
 
+<td [style.color]="getSalaryColor(employee)" > 
+
+ATENCAO QUALQUER RETORNO DE METODO QUE COLOQUE NULL ENTAO 
+A PROPRIEDADE REATIVA MONITORADA PELO ANGULAR NAO SERA ADICIONADA
+
+dica par gerar um numerador unico nas linhas de uma tabela 
+ <tr *ngFor="let employee of employees;let i=index;" [id]="'tr'+i">
+
+ Aqui acessa o valor do index(disponivel pelo for) 
+ Atribuo a variavel i e depois posso colocar essa informacao no atributo id 
+ ficou concatenado tr + i  exemplo tr0 tr1 tr2 

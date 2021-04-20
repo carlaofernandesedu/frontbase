@@ -3,6 +3,8 @@
     <tr>
         <td>Nome</td>
         <td>Salario</td>
+        <td>Salario Style Color</td>
+        <td>Salario Class Color</td>
     </tr>
 </thead>
 <tbody>
@@ -11,6 +13,9 @@
         <td>{{employee.salary}}</td> -->
         <td [innerHtml]="employee.name"></td>
         <td [innerHtml]="employee.salary"></td>
+        <td [style.color]="getStyleColorSalary(employee)">{{employee.salary}}</td>
+        <td [ngClass]="getClassSalary(employee)">{{employee.salary}}</td>
+        <!-- <td [ngClass]="{'salary-expensive:true'}">{{employee.salary}}</td> -->
     </tr>
 </tbody>
 </table>

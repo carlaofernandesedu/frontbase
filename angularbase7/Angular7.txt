@@ -290,3 +290,16 @@ usando diretiva sendo que aqui quando false o objeto nao sao criados
  as propriedades serao compartilhadas ja que sera uma classe criada uma instancia durante 
  o ciclo da aplicacao
  tomra cuidaddo com referencia de objetos adicionados ao array. Deve se criar uma copia
+
+ ***********************************
+ eLABORACAO PARA PRODUCAO
+ ***********************************
+ ng build 
+ Empacotador WEBPACK 
+ Observar no curso somente alguns poucos arquivos js 
+ os componentes tambem se tranformam em js 
+ criou-se um pasta dist denro do projeto 
+ Há um servidor tambem pode ser instalado o http-server
+http-server.cmd dentro do projeto para simular o servidor http-server
+
+npm install -g http-server

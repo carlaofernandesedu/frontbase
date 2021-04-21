@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from '../employee.service';
+import { Employee, EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'employee-new',
@@ -10,8 +10,9 @@ export class EmployeeNewComponent implements OnInit {
 
   fluxots:string = 'componenteTS';
   fluxohtmlts:string = 'componenteHTMLTS';
-  name:string = '';
-  salary:number = 0;
+  employee:Employee = { name:'',salary:0};
+  
+  
   
 
   constructor(private employeeService: EmployeeService) {  
@@ -19,7 +20,8 @@ export class EmployeeNewComponent implements OnInit {
   }
 
   addEmployee(){
-    this.employeeService.addEmployee({name:this.name,salary:this.salary});
+    const copiaEmployee = Object.assign({},this.employee);
+    this.employeeService.addEmployee(copiaEmployee);
     console.log(this.employeeService.employees);
   }
 

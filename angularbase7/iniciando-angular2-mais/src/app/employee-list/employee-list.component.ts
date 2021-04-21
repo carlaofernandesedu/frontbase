@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import employeesglobal from '../employeesglobal';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-employee-list',
@@ -8,8 +8,8 @@ import employeesglobal from '../employeesglobal';
 })
 export class EmployeeListComponent implements OnInit {
 
-  constructor() { }
-  employees = employeesglobal;
+  constructor(public employeeService:EmployeeService) { }
+  
 
   ngOnInit(): void {
   }

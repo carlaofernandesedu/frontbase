@@ -20,3 +20,13 @@
 <br>
 <button type="button" (click)="addEmployee()" >Adicionar Empregado</button>
 <button type="button" (click)="addEmployeeComEvento($event)"> Adicionar Empregado Com Evento</button>
+<hr>
+<br>
+<br>
+<label>Testes Para Esconder e Nao Criar Elemento</label>
+<div [hidden]="salary > 3000">
+   <label style="color:red;">Esse item será escondido quando o salario for maior que 3000</label>
+</div>
+<div *ngIf="salary != 5000">
+    <label style="color:blue;">Esse item será removido quando o salario for = 5000</label>
+ </div>

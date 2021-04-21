@@ -268,3 +268,25 @@ dica par gerar um numerador unico nas linhas de uma tabela
  Aqui acessa o valor do index(disponivel pelo for) 
  Atribuo a variavel i e depois posso colocar essa informacao no atributo id 
  ficou concatenado tr + i  exemplo tr0 tr1 tr2 
+
+ ***********************************
+ aula exibir campos a partir de logica 
+ ***********************************
+ usando propriedades reativas 
+ <div [hidden]="salary > 3000">
+   <label style="color:red;">Esse item será escondido quando o salario for maior que 3000</label>
+</div>
+usando diretiva sendo que aqui quando false o objeto nao sao criados
+<div *ngIf="salary != 5000">
+    <label style="color:blue;">Esse item será removido quando o salario for = 5000</label>
+ </div>
+
+ 
+ ***********************************
+ aula montar servicos 
+ ***********************************
+ ng g service EmployeeService
+ aqui se coloca o conceito de criar um servico compartilhado 
+ as propriedades serao compartilhadas ja que sera uma classe criada uma instancia durante 
+ o ciclo da aplicacao
+ tomra cuidaddo com referencia de objetos adicionados ao array. Deve se criar uma copia

@@ -1,6 +1,7 @@
 <h1>Lista dos Empregados</h1>
 <table><thead>
     <tr>
+        <td>Identificador</td>
         <td>Nome</td>
         <td>Salario</td>
         <td>Salario Style Color</td>
@@ -8,7 +9,8 @@
     </tr>
 </thead>
 <tbody>
-    <tr *ngFor="let employee of employees">
+    <tr *ngFor="let employee of employeeService.employees;let identificador=index;">
+        <td>{{identificador}}</td>
         <!-- <td>{{employee.name}}</td>
         <td>{{employee.salary}}</td> -->
         <td [innerHtml]="employee.name"></td>
